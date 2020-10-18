@@ -1,6 +1,12 @@
 # Quake 3 OSP dedicated server Docker image
 
-[Install Docker](https://docs.docker.com/docker-for-mac/install/)
+This is a (WIP) fork of [`smikhalevski/q3a-osp-docker`](https://github.com/smikhalevski/q3a-osp-docker) to build a smaller image (that doesn't ship with ID Software's PAK files and grabs them off a volume).
+
+I'm also in the process of tweaking the build process so that you can get it going on an entirely blank machine.
+
+---
+
+## Old README
 
 Run on localhost:
 
@@ -23,5 +29,5 @@ docker rm $(docker ps -a -q)
 docker rmi $(docker images -q)
 
 docker pull q3a
-docker run -p 27960:27960/udp -p 27960:27960/tcp -e SLACK_WEB_HOOK=<your_slack_web_hook_url> smikhalevski/q3a
+docker run -p 27960:27960/udp -p 27960:27960/tcp -e SLACK_WEB_HOOK=<your_slack_web_hook_url> local/q3a
 ```
